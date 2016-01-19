@@ -21,6 +21,7 @@ class Guard extends Person{
    }
    void chase(Player P){
      if (P.xpos == xpos && P.ypos == ypos) {
+       print("You've been caught");
        P.lives -= 1;
      }
      if (P.xpos > xpos){

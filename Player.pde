@@ -6,7 +6,7 @@ class Player extends Person{
      lives = 5;
      keys = 0;
    }
-   Player(float Xpos,float Ypos,int Speed, int Health){
+   Player(float Xpos,float Ypos,float Speed, int Health){
      super(Xpos,Ypos,Speed,Health); 
      light = 20;
      lives = 5;

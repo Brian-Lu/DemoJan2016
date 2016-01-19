@@ -60,11 +60,9 @@ void PlayLevel(int level){
       print(P1.keys);
     }
   }
+  patrol();
   for(Guard guard : Guards){
     guard.display();
-    if (guard.xpos == P1.xpos && guard.ypos == P1.ypos) {
-      P1.lives -= 1;
-    }
   }
   for(Prisoner prisoner : Prisoners) {
     prisoner.display();
@@ -90,10 +88,12 @@ void PlayLevel(int level){
       
   }
   if(P1.xpos >= 800 && P1.xpos <= 815 && P1.ypos >= 600 && P1.ypos <= 615){
-    next = level + 1;
+/*    next = level + 1;
     setLevel(next);
     Load(next);
     print(level);
+    */
+    clear();
   }
   for (Door door : Doors) {
     door.block(P1);
@@ -125,7 +125,7 @@ void Load(int Level){
     -for guards, it will be extended as far as necessary to add patrol points
     */
     if(words[0].equals("Player")){
-      P1 = new Player(nums[0],nums[1],1,100);
+      P1 = new Player(nums[0],nums[1],1.5,100);
     }else if(words[0].equals("Guard")){
       Guards.add(new Guard(nums[0],nums[1],nums[2],100));
     }else if(words[0].equals("Wall")){
