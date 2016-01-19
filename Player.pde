@@ -1,18 +1,16 @@
 class Player extends Person{
-   int light;
-   int lives;
-   int keys;
+   int light,lives,keys;
    Player(){
      super(); 
      light = 20;
      lives = 5;
-     keys = 5;
+     keys = 0;
    }
    Player(float Xpos,float Ypos,int Speed, int Health){
      super(Xpos,Ypos,Speed,Health); 
      light = 20;
      lives = 5;
-     keys = 5;
+     keys = 0;
    }
    void move(){
      if (key == CODED){
@@ -27,15 +25,18 @@ class Player extends Person{
        }
      }
    }
+   void addKey(){
+     keys += 1; 
+   }
    boolean hasKEY(){
      if(keys>0){
-        keys -= 1;
         return true;
      }
      return false;
    }
+   
    void display(){
-      ellipse(xpos,ypos,20,20);
+      ellipse(xpos,ypos,10,10);
       /*rect( xpos - 10, ypos + 10, 20, 40);
       line(xpos + 10, ypos + 20, xpos + 15, ypos + 5);
       line(xpos - 10, ypos + 20, xpos - 15, ypos + 5);
